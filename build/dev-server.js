@@ -60,7 +60,27 @@ app.use(hotMiddleware)
 
 // serve pure static assets
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
-app.use(staticPath, express.static('./static'))
+app.use(staticPath, express.static('./src/assets'))
+
+var request = require('request')
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+
+var API = 'http://weixin.dongxinwl.cn/API/Projects/'
+app.post('/:apiName',function (req,res,next) {
+  console.log(req.params.apiName);
+  request.post({
+    url:API + req.params.apiName,
+    form: req.body
+  }, function(err,httpResponse,body){
+    try {
+      res.json(JSON.parse(body))
+    } catch(err) {
+      res.send(err.msg)
+    }
+  })
+})
 
 var uri = 'http://localhost:' + port
 

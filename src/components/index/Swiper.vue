@@ -21,14 +21,15 @@
     data () {
       return {
         swiperOption: {
-          autoplay: 3500,
+          autoplay: 200,
+          loop: true,
           setWrapperSize: true,
           pagination: '.swiper-pagination',
           paginationClickable: true,
           mousewheelControl: true,
           observeParents: true
         },
-        swiperSlides: ['/static/img/a.jpg', '/static/img/b.jpg', '/static/img/c.jpg']
+        swiperSlides: ['/assets/img/a.jpg', '/assets/img/b.jpg', '/assets/img/c.jpg']
       }
     }
   }

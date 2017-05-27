@@ -1,14 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from 'components/Index'
-import SiteList from 'components/SiteList'
-import Choose from 'components/Choose'
+import Index from '../page/Index'
+import SiteList from '../page/SiteList'
+import Choose from '../page/Choose'
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
       path: '/',

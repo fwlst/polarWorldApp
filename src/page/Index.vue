@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="index">
       <swiper></swiper>
       <grid></grid>
       <hotList></hotList>
@@ -7,9 +7,9 @@
 </template>
 
 <script>
-  import swiper from './Swiper.vue'
-  import grid from './Grid.vue'
-  import hotList from './HotList.vue'
+  import swiper from '@/components/index/Swiper.vue'
+  import grid from '@/components/index/Grid.vue'
+  import hotList from '@/components/index/HotList.vue'
   export default {
     name: 'app',
     components: {
